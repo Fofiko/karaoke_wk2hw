@@ -8,11 +8,13 @@ require_relative("../song.rb")
 class SongTest < MiniTest::Test
 
   def setup
-    @song1 = Song.new("ruby tuesday")
+    @song1 = Song.new("Title1")
+    @song2 = Song.new("Title2")
+    @song3 = Song.new("Title3")
   end
 
   def test_song_has_title
-    assert_equal("ruby tuesday", @song1.title)
+    assert_equal("Title1", @song1.title)
   end
 
 
