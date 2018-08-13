@@ -1,7 +1,7 @@
 class Room
 
-  attr_reader :name, :playlist, :till
-  attr_writer :playlist, :till
+  attr_reader :name, :playlist, :fee, :till, :guests
+  attr_writer :playlist, :till, :guests
 
   def initialize(name, playlist, till)
     @name = name
@@ -75,6 +75,7 @@ class Room
     @playlist.push(song)
   end
 
+  # ##QUESTION move to guest
   def check_fav_song(guest)
     if @playlist.include?(guest.song)
       return "OMG that's my song!"
@@ -82,6 +83,14 @@ class Room
       return "Meh"
     end
   end
+
+
+  def add_to_tab(guest,amount)
+    guest.tab += amount
+  end
+
+
+
 
 
 end

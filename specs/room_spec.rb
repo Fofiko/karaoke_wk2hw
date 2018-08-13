@@ -4,6 +4,7 @@ require("pry")
 require_relative("../song.rb")
 require_relative("../guest.rb")
 require_relative("../room.rb")
+require_relative("../bar.rb")
 
 class RoomTest < MiniTest::Test
 
@@ -95,6 +96,13 @@ class RoomTest < MiniTest::Test
   def test_guest_likes_song__no
     @room1.add_song(@song2)
     assert_equal("Meh", @room1.check_fav_song(@guest1))
+  end
+
+
+  def test_add_fee_and_drink_to_guest_tab
+    @room1.add_to_tab(@guest1,@fee)
+    @room1.add_to_tab(@guest1,@bar.drinks[:tomato_juice])
+    assert_equal(32,@guest1.tab)
   end
 
 
