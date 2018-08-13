@@ -1,13 +1,12 @@
 class Guest
 
-  attr_reader :name, :song, :wallet
+  attr_reader :song, :wallet
+  attr_writer :wallet
 
-  def initialize(name, song, wallet)
-    @name = name
+  def initialize(song, wallet)
     @song = song
     @wallet = wallet
   end
-
 
 
 
