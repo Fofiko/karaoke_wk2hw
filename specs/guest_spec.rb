@@ -21,6 +21,9 @@ class GuestTest < MiniTest::Test
     assert_equal(50, @guest1.wallet)
   end
 
+  def test_guest_starts_with_empty_tab
+    assert_equal(0,@guest1.tab)
+  end
 
 
 
